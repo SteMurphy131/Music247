@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<h2 class = "sub-header">Releases</h2>
+<div class = "table-resposive">
+<table class = "table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Notracks</th>
+      <!--<th>Artist name</th>-->
+      <th>Artist</th>
+      <!--<th>Label name</th>-->
+      <th>Label</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @releases.each do |release| %>
+      <tr>
+        <td><%= release.name %></td>
+        <td><%= release.noTracks %></td>
+        <!--<td><%= release.artist_name %></td>-->
+        <td><%= release.artist.name %></td>
+        <!--<td><%= release.label_name %></td>-->
+        <td><%= release.label.name %></td>
+        <td><%= link_to 'Show', release %></td>
+        <td><%= link_to 'Edit', edit_release_path(release) %></td>
+        <td><%= link_to 'Destroy', release, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Release', new_release_path %>

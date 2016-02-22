@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @track.name %>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <%= sanitize @track.video, :tags => ['iframe'] %>
+</p>
+
+<p>
+  <strong>Release:</strong>
+  <%= @track.release.name %>
+</p>
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>

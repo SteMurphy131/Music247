@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @label.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @label.location %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+    <%= image_tag(@label.image, :alt => "", :size=>"120x100") %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @label.owner %>
+</p>
+
+<strong>Releases:</strong>
+<% @label.releases.each do |release| %>
+	<br><%=release.name %>
+<% end %>
+<br>
+<br>
+<%= button_to 'Follow', user_labels_path(label_id: @label)%></br>
+<%= link_to 'Edit', edit_label_path(@label) %> |
+<%= link_to 'Back', labels_path %>

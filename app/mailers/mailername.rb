@@ -1,0 +1,2 @@
+class Mailername < ApplicationMailer
+end
